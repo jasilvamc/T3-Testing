@@ -8,7 +8,7 @@ version: 2.1
 jobs:
   rubocop:
     docker:
-      - image: circleci/ruby:3.1.3
+      - image: cimg/ruby:3.1.4
     steps:
       - checkout
       # - run:
@@ -22,7 +22,7 @@ jobs:
           command: rubocop
   rspec:
     docker:
-      - image: circleci/ruby:3.1.3
+      - image: cimg/ruby:3.1.4
     steps:
       - checkout
       - run:
