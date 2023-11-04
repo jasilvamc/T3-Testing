@@ -4,7 +4,7 @@ require 'rails_helper'
 RSpec.describe ReviewController, type: :controller do
   before do
     @user = User.create!(name: 'John1', password: 'Nonono123!', email: 'asdf@gmail.com', role: 'user')
-    @product = Product.create!(nombre: 'Sample Product', precio: 100, stock: 10, user_id: @user.id, categories: 'Cancha')
+    @product = Product.create!(nombre: 'John1', precio: 4000, stock: 1, user_id: @user.id, categories: 'Cancha')
   end
 
   describe 'POST #insertar' do
