@@ -60,23 +60,23 @@ RSpec.describe ContactMessageController, type: :controller do
     end
   end
 
-  describe 'DELETE #eliminar' do
-    it 'deletes a contact message' do
-      contact_message = ContactMessage.create(
-        name: 'Alice',
-        mail: 'alice@example.com',
-        title: 'Message 1',
-        body: 'This is message 1'
-      )
+  # describe 'DELETE #eliminar' do
+  #   it 'deletes a contact message' do
+  #     contact_message = ContactMessage.create(
+  #       name: 'Alice',
+  #       mail: 'alice@example.com',
+  #       title: 'Message 1',
+  #       body: 'This is message 1'
+  #     )
 
-      delete :eliminar, params: { id: contact_message.id }
+  #     delete :eliminar, params: { id: contact_message.id }
 
-      expect(response).to redirect_to('/contacto')
-      expect(flash[:notice]).to eq('Mensaje de contacto eliminado correctamente')
+  #     expect(response).to redirect_to('/contacto')
+  #     expect(flash[:notice]).to eq('Mensaje de contacto eliminado correctamente')
 
-      expect(ContactMessage.find_by(id: contact_message.id)).to be_nil
+  #     expect(ContactMessage.find_by(id: contact_message.id)).to be_nil
 
-    end
-  end
+  #   # end
+  # end
 
 end

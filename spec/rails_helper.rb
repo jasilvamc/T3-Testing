@@ -1,4 +1,5 @@
 require 'simplecov'
+
 SimpleCov.start do
   add_group 'Controllers', 'app/request'
   add_group 'Models', 'app/models'
