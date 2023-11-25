@@ -28,6 +28,26 @@ class SolicitudController < ApplicationController
       fecha = params[:solicitud][:reservation_datetime].to_datetime
       dia = fecha.strftime('%d/%m/%Y')
       hora = fecha.strftime('%H:%M')
+      # Check if the reservation date is valid, by checking the product's horarios
+      if producto.horarios.present?
+        horarios = producto.horarios.split(',')
+        hora_inicio = horarios[1].to_datetime
+        hora_fin = horarios[2].to_datetime
+        fecha_inicio = horarios[0].to_datetime
+
+        if fecha < fecha_inicio || fecha > fecha_inicio + 1.day
+          flash[:error] = 'Fecha de reserva inválida!'
+          redirect_to "/products/leer/#{params[:product_id]}"
+          return
+        end
+
+        if hora < hora_inicio.strftime('%H:%M') || hora > hora_fin.strftime('%H:%M')
+          flash[:error] = 'Hora de reserva inválida!'
+          redirect_to "/products/leer/#{params[:product_id]}"
+          return
+        end
+
+      end
       @solicitud.reservation_info = "Solicitud de reserva para el día #{dia}, a las #{hora} hrs"
     end
 
