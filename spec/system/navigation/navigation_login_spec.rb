@@ -1,5 +1,8 @@
 require 'rails_helper'
 
+# - Se navega desde el inicio hacia la vista de users/show, usando el boton de inicio para volver al inicio.
+# - Se navega desde el inicio hacia la vista de users/show, usando el boton de editar para ir a la vista de edición de usuario.
+# - Se navega desde el inicio hacia la vista de edit, usando el boton de inicio para volver al inicio.
 RSpec.describe 'Homepage navigation', type: :system do
 
     before do

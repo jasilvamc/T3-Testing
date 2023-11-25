@@ -1,5 +1,7 @@
 require 'rails_helper'
-
+# - Se navega desde el inicio hacia la vista de registro y luego se usa el boton para volver al inicio, 
+#  revisando que se haya vuelto correctamente. Se hace lo mismo visitando las vistas de login y contacto en lugar de registro.
+#  También se hace lo mismo desde el inicio, usando directamente el boton que lleva al inicio.
 RSpec.describe 'Homepage navigation', type: :system do
 
   before do

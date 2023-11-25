@@ -1,5 +1,12 @@
 require 'rails_helper'
 
+# Para testear el form de creación de producto, se testea un happy path y tres caminos alternativos, que fallan por los siguientes motivos:
+# - No se ingresa el nombre del producto
+# - El precio del producto no es un número
+# - El stock del producto no es un número
+# Para todos estos tests, primero se crea un usuario admin que pueda crear los productos. 
+# Luego se intenta crear (con diferentes resultados dependiendo de si es happy path o no) y se 
+# revisa que el mensaje de error (o confirmación) sea el correcto.
 RSpec.describe 'Products', type: :system do
   before do
     @user = User.create!(name: 'John1', password: 'Nonono123!', email: 'asdf@gmail.com',

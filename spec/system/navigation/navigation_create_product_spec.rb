@@ -1,5 +1,9 @@
 require 'rails_helper'
 
+# Como tests de navegación, se tiene lo siguiente (siempre comenzando desde el landing page):
+# - Se navega hacia la vista de creación de producto con un usuario admin y se usa el boton cancelar, volviendo al landing page.
+# - Se navega hacia la vista de creación de producto con un usuario admin.
+# - Se navega hacia la vista de creación de producto con un usuario no admin, y se revisa que aparezca el mensaje de error correcto.
 RSpec.describe 'Create product navigation', type: :system do
   before do
     @user = User.create!(name: 'John1', password: 'Nonono123!', email: 'aassdf@gmail.com',

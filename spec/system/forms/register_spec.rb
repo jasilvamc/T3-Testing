@@ -2,6 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'Registration', type: :system do
     
+# Para testear el form de registro de usuario, se testea un happy path y dos caminos alternativos, que fallan por los siguientes motivos:
+# - Se ingresa un correo que ya está registrado
+# - No se ingresa un correo
+# Para estos tests, se revisa que el mensaje de error (o confirmación) sea el correcto, y/o que la página se redirija correctamente.
     describe 'User registration' do
         it 'registers successfully' do
           visit '/register'
