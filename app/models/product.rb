@@ -16,6 +16,10 @@ class Product < ApplicationRecord
   # Valida que el campo precio no esté vacío y sea un número mayor o igual a 0.
   validates :precio, presence: true, numericality: { greater_than_or_equal_to: 0 }
 
+  # Valida que el campo horarios, sea un string en un formato que indique un día, mes, año y hora, como dd/mm/aaaa,hh:mm,hh:mm. También puede ser vacío.
+  validates :horarios, format: { with: /\d{2}\/\d{2}\/\d{4},\d{2}:\d{2},\d{2}:\d{2}/, message: 'Formato de horario inválido' }, allow_blank: true
+
+
   # Valida que el campo user_id no esté vacío.
 
   # Contiene una imagen como attachment.

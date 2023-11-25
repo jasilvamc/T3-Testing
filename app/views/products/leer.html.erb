@@ -68,7 +68,8 @@
                                 <tbody>
                                 <% @horarios.each do |horario| %>
                                     <tr>
-                                    <td><%= horario[0] %></td>
+                                    <%# flip the day and month in horario[0], but keep the year in the same position %>
+                                    <td><%= horario[0].split("/")[1] %>/<%= horario[0].split("/")[0] %>/<%= horario[0].split("/")[2] %></td>
                                     <td><%= horario[1] %></td>
                                     <td><%= horario[2] %></td>
                                     </tr>
