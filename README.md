@@ -16,7 +16,7 @@ Para testear el form de registro de usuario, se testea un happy path y dos camin
 - No se ingresa un correo
 Para estos tests, se revisa que el mensaje de error (o confirmación) sea el correcto, y/o que la página se redirija correctamente.
 
-Como tests de navegación, se tiene lo siguiente:
+Como tests de navegación, se tiene lo siguiente (siempre comenzando desde el landing page):
 - Se navega hacia la vista de creación de producto con un usuario admin y se usa el boton cancelar, volviendo al landing page.
 - Se navega hacia la vista de creación de producto con un usuario admin.
 - Se navega hacia la vista de creación de producto con un usuario no admin, y se revisa que aparezca el mensaje de error correcto.
